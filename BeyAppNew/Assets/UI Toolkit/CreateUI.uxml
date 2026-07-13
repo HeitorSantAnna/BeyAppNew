@@ -1,0 +1,19 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; position: absolute; top: 0%; background-color: rgb(20, 137, 65); bottom: 0%; right: 0%; left: 0%;">
+        <ui:VisualElement name="TitlleZone" style="flex-grow: 1; position: absolute; top: 0%; bottom: 90%; right: 0%; left: 0%;">
+            <ui:Label text="Creator Beys" name="Titlle" style="position: absolute; top: 0%; bottom: 0%; right: 0%; left: 0%; color: rgb(255, 255, 255); font-size: 90px; -unity-text-align: middle-center; -unity-font-style: bold-and-italic;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="ZoneBottunsLineBey" style="flex-grow: 1; position: absolute; right: 0%; left: 0%; top: 10%; bottom: 80%; justify-content: flex-start; align-items: center;">
+            <ui:Button text="BX" name="BXBeysButton" selectable="false" focusable="true" style="top: 20%; right: 70%; bottom: 20%; left: 0%; position: absolute; font-size: 60px; -unity-font-style: bold; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"/>
+            <ui:Button text="CX" name="CXBeysButton" style="top: 20%; right: 35%; bottom: 20%; left: 35%; position: absolute; font-size: 60px; -unity-font-style: bold; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"/>
+            <ui:Button text="UX" name="UXBeysButton" style="top: 20%; right: 0%; bottom: 20%; left: 70%; position: absolute; -unity-font-style: bold; font-size: 60px; justify-content: flex-start; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="ZoneCreatorBey" style="flex-grow: 1; position: absolute; top: 20%; bottom: 10%; right: 0%; left: 0%; background-color: rgb(0, 0, 0);">
+            <ui:ListView virtualization-method="DynamicHeight" show-border="false" item-template="project://database/Assets/UI%20Toolkit/Teste.uxml?fileID=9197481963319205126&amp;guid=3ce59876268d39044b5cd80913a49d21&amp;type=3#Teste" style="position: absolute; top: 0%; bottom: 0%; right: 0%; left: 0%; -unity-background-scale-mode: stretch-to-fill;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="ZoneButtons" style="flex-grow: 1; position: absolute; top: 90%; left: 0%; bottom: 0%; right: 0%; background-color: rgba(0, 0, 0, 0);">
+            <ui:Button text="Exit" name="ExitButton" style="position: absolute; top: 20%; bottom: 20%; left: 10%; right: 60%; font-size: 60px; -unity-font-style: bold;"/>
+            <ui:Button text="Confirm" name="ConfirmButton" style="position: absolute; top: 20%; bottom: 20%; left: 60%; right: 10%; font-size: 60px; -unity-font-style: bold;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

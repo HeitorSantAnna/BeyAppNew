@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; color: rgb(202, 35, 35); background-color: rgb(166, 45, 45);">
+        <ui:Label text="TESTE BEM SUCEDIDO" style="top: 0%; position: absolute; right: 0%; bottom: 0%; left: 0%; -unity-font-style: bold; font-size: 80px; color: rgb(35, 202, 164); -unity-text-align: middle-center;"/>
+    </ui:VisualElement>
+</ui:UXML>
