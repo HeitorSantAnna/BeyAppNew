@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: CobaltDrake
   m_EditorClassIdentifier: 
   namePart: Cobalt Drake
-  sprite: {fileID: 0}
+  sprite: {fileID: 1991476394, guid: f9ae15fb4f099d64b8bb0564f8f637ae, type: 3}
   ID: 0
   typeBey: 1
+  typePart: 0
   Turnleft: 0
   DontNeedReched: 0
   IsUx: 0

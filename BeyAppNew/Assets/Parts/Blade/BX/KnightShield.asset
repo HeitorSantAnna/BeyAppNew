@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: KnightShield
   m_EditorClassIdentifier: 
   namePart: Knight Shield
-  sprite: {fileID: 0}
+  sprite: {fileID: 96646292, guid: 98136daf923a37d46be3c628e6e4ff74, type: 3}
   ID: 0
   typeBey: 2
+  typePart: 0
   Turnleft: 0
   DontNeedReched: 0
   IsUx: 0

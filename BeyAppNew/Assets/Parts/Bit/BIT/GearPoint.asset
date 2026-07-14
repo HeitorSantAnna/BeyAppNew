@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GearPoint
   m_EditorClassIdentifier: 
   namePart: Gear Ponit
-  sprite: {fileID: 0}
+  sprite: {fileID: 1472679070, guid: 0f138a11eb0291f4e8a69c1a8ef05aeb, type: 3}
   ID: 0
   typeBey: 2
   typePart: 4

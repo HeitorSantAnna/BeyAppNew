@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SharkEdge
   m_EditorClassIdentifier: 
   namePart: Shark Edge
-  sprite: {fileID: 0}
+  sprite: {fileID: -74474030, guid: 7b5f70171dcdc704995d33f4213ce652, type: 3}
   ID: 0
   typeBey: 1
+  typePart: 0
   Turnleft: 0
   DontNeedReched: 0
   IsUx: 0

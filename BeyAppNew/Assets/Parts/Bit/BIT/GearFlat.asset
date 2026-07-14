@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GearFlat
   m_EditorClassIdentifier: 
   namePart: Gear Flat
-  sprite: {fileID: 0}
+  sprite: {fileID: -557527410, guid: d859c1379c95c474fbd7b735afaabab6, type: 3}
   ID: 0
   typeBey: 0
   typePart: 4
