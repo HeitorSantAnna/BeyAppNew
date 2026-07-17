@@ -27,4 +27,9 @@ public class Over : Beys
     {
         return typePart;
     }
+
+    public override bool Expend()
+    {
+        return IsExpend;
+    }
 }

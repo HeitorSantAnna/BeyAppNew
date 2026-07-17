@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: FreeBall
   m_EditorClassIdentifier: 
   namePart: Free Ball
-  sprite: {fileID: 0}
+  sprite: {fileID: -1748877247, guid: 00b122daa0136e14380cb02e1afa23fb, type: 3}
   ID: 0
   typeBey: 3
-  typePart: 4
+  typePart: 7
   Turnleft: 0
+  IsExpend: 0
   IsSimple: 0
-  typeBit: 1

@@ -9,7 +9,7 @@ public class Reched : Beys
 
     public override string NameP()
     {
-        return $"{number}-{height}";
+        return namePart;
     }
 
     public override int IDBey()
@@ -30,6 +30,11 @@ public class Reched : Beys
     public override TypePart TypeP()
     {
         return typePart;
+    }
+
+    public override bool Expend()
+    {
+        return IsExpend;
     }
 }
 

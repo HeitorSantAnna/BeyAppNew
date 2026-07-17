@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f065a8221f40e033fa18993217ae600d, type: 3}
   m_Name: ZeroXXXXXX
   m_EditorClassIdentifier: 
-  namePart: 
-  sprite: {fileID: 0}
+  namePart: 0-60
+  sprite: {fileID: -1738297678, guid: 3d70daca8034f6247bf0fa1b67e9d693, type: 3}
   ID: 0
   typeBey: 8
+  typePart: 0
   Turnleft: 0
+  IsExpend: 0
   number: 0
   height: 60

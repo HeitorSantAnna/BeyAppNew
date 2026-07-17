@@ -5,7 +5,7 @@ public class MainBlade : Beys
 {
     public bool DontNeedReched;
 
-    public bool IsUx, IsExpend, IsBx, IsCx;
+    public bool IsUx, IsBx, IsCx;
 
     public bool NeedLockChip, NeedAssit, NeedOver;
 
@@ -32,5 +32,10 @@ public class MainBlade : Beys
     public override TypePart TypeP()
     {
         return typePart;
+    }
+
+    public override bool Expend()
+    {
+        return IsExpend;
     }
 }

@@ -15,6 +15,8 @@ public abstract class Beys : ScriptableObject
 
     public bool Turnleft;
 
+    public bool IsExpend;
+
     public abstract string NameP();
 
     public abstract TypeBey Type();
@@ -24,6 +26,8 @@ public abstract class Beys : ScriptableObject
     public abstract bool TurnLeft();
 
     public abstract TypePart TypeP();
+
+    public abstract bool Expend();
 }
 
 public enum TypeBey
@@ -41,5 +45,12 @@ public enum TypePart
     Over,
     Main,
     Simple,
-    Double
+    Double,
+    Normal,
+    Free,
+    High,
+    Under,
+    Gear,
+    Low,
+    Trans
 }

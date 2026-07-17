@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f065a8221f40e033fa18993217ae600d, type: 3}
   m_Name: SevenXXXXXXX
   m_EditorClassIdentifier: 
-  namePart: 
-  sprite: {fileID: 0}
+  namePart: 7-60
+  sprite: {fileID: 743895826, guid: 50014841bf31ce242bb5b712cd866f3c, type: 3}
   ID: 0
   typeBey: 8
+  typePart: 0
   Turnleft: 0
+  IsExpend: 0
   number: 7
   height: 70

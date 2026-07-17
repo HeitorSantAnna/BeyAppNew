@@ -67,7 +67,11 @@ public class GameController : MonoBehaviour
         //Aqui vai chamar as Blades BX
         Addressables.LoadAssetsAsync<Beys>("BX", bladeb => BladeBxs.Add(bladeb)).Completed += OnLoaded;
 
-        //
+        //Aqui ficam as Recheds
+        Addressables.LoadAssetsAsync<Beys>("Reched", reched => Recheds.Add(reched)).Completed += OnLoaded;
+
+        //Aqui ficam as bits
+        Addressables.LoadAssetsAsync<Beys>("Bit", bit => Bits.Add(bit)).Completed += OnLoaded;
         /*Addressables.LoadAssetsAsync<Beys>("Over", Oblade => Overblade.Add(Oblade)).Completed += OnLoaded;
         Addressables.LoadAssetsAsync<Beys>("Assist", Ablade => Assistblade.Add(Ablade)).Completed += OnLoaded;
         Addressables.LoadAssetsAsync<Beys>("Main", Mblade => Mainblade.Add(Mblade)).Completed += OnLoaded;*/
@@ -79,5 +83,20 @@ public class GameController : MonoBehaviour
         {
             Debug.Log($"Tudo foi carregado");
         }
+    }
+
+    public List<Beys> BladesBX()
+    {
+        return BladeBxs;
+    }
+
+    public List<Beys> Reched()
+    {
+        return Recheds;
+    }
+
+    public List<Beys> Bit()
+    {
+        return Bits;
     }
 }

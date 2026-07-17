@@ -5,7 +5,7 @@ public class Bit : Beys
 {
     public bool IsSimple;
 
-    public TypeBit typeBit;
+    //public TypeBit typeBit;
 
     public override string NameP()
     {
@@ -31,9 +31,14 @@ public class Bit : Beys
     {
         return typePart;
     }
+
+    public override bool Expend()
+    {
+        return IsExpend;
+    }
 }
 
-public enum TypeBit
+/*public enum TypeBit
 {
     Normal,
     Free,
@@ -42,4 +47,4 @@ public enum TypeBit
     Gear,
     Low,
     Trans
-}
+}*/

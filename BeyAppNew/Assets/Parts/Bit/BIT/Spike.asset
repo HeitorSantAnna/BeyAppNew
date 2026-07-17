@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Spike
   m_EditorClassIdentifier: 
   namePart: Spike
-  sprite: {fileID: 0}
+  sprite: {fileID: 1472679070, guid: 0f138a11eb0291f4e8a69c1a8ef05aeb, type: 3}
   ID: 0
   typeBey: 1
-  typePart: 4
+  typePart: 6
   Turnleft: 0
+  IsExpend: 0
   IsSimple: 0
-  typeBit: 0

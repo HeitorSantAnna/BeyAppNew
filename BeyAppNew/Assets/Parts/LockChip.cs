@@ -29,4 +29,9 @@ public class LockChips : Beys
     {
         return typePart;
     }
+
+    public override bool Expend()
+    {
+        return IsExpend;
+    }
 }

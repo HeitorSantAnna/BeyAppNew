@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: LowFlat
   m_EditorClassIdentifier: 
   namePart: Low Flat
-  sprite: {fileID: 0}
+  sprite: {fileID: -557527410, guid: d859c1379c95c474fbd7b735afaabab6, type: 3}
   ID: 0
   typeBey: 0
-  typePart: 4
+  typePart: 11
   Turnleft: 0
+  IsExpend: 0
   IsSimple: 0
-  typeBit: 5
