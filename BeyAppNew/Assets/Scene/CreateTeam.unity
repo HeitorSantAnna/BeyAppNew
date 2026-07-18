@@ -551,8 +551,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIController
   mainDocument: {fileID: 1443164616}
   bxDocument: {fileID: 9197481963319205126, guid: 3ce59876268d39044b5cd80913a49d21, type: 3}
-  uxDocument: {fileID: 0}
-  cxDocument: {fileID: 0}
+  uxDocument: {fileID: 9197481963319205126, guid: ba2ca9e79eb2af5408e937b5d8a79a4b, type: 3}
+  cxDocument: {fileID: 9197481963319205126, guid: ba6cd39741e06304a869cf7987189f88, type: 3}
 --- !u!4 &516058400
 Transform:
   m_ObjectHideFlags: 0

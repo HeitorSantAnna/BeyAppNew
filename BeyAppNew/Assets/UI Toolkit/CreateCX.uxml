@@ -1,7 +1,45 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="Background" style="flex-grow: 1; position: absolute; top: 0%; bottom: 0%; right: 0%; left: 0%; background-color: rgb(34, 139, 34);">
-        <ui:ScrollView name="ListCreateCX" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="AlwaysVisible" style="position: absolute; top: 0%; bottom: 0%; left: 0%; right: 0%;">
-            <ui:VisualElement name="BackLockChip" style="flex-grow: 1;"/>
+        <ui:ScrollView name="ListCreateCX" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="AlwaysVisible" style="position: absolute; top: 9px; bottom: -7px; left: 0; right: 0;">
+            <ui:VisualElement name="BackLockChip" style="flex-grow: 1; position: absolute; top: 0%; left: 0%; right: 0%; bottom: auto; height: 1000px;">
+                <ui:Image name="ImageLockChip" style="position: absolute; top: 5%; left: 5%; right: 5%; bottom: auto; height: 500px;"/>
+                <ui:Toggle label="Tem Metal?" name="IsMetal" style="position: absolute; top: 60%; left: 45%; right: 40%; flex-direction: column; -unity-text-align: upper-center; font-size: 20px; -unity-font-style: bold; align-self: flex-end; align-items: center;"/>
+                <ui:Toggle label="Gira Esquerda" name="LeftSpinChip" style="position: absolute; top: 60%; left: 70%; right: 10%; font-size: 20px; -unity-font-style: bold; flex-direction: column; align-items: center; -unity-text-align: upper-center;"/>
+                <ui:DropdownField label="Tipo do Lock Chip" name="TypeLC" choices="Attack,Defense,Stamina,Balance" style="position: absolute; font-size: 20px; -unity-font-style: bold; flex-direction: column; top: 60%; left: 10%; right: 60%; -unity-text-align: upper-center;"/>
+                <ui:DropdownField label="Escolha de Chip" name="NameChip" style="position: absolute; bottom: 8%; left: 10%; right: 10%; flex-direction: column; -unity-text-align: upper-center; font-size: 30px; -unity-font-style: bold;"/>
+                <ui:Button text="Pesquisar" name="SearchLockChip" style="bottom: 20%; position: absolute; right: 10%; -unity-font-style: bold; font-size: 20px;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="BackOverBlade" style="flex-grow: 1; position: absolute; top: 1100px; right: 0%; left: 0%; height: 1000px;">
+                <ui:Image name="ImageOver" style="top: 5%; left: 5%; right: 5%; position: absolute; height: 500px;"/>
+                <ui:DropdownField label="Tipo da Over Blade" name="TipeOver" choices="Attack,Stamina,Defense,Balance" style="flex-direction: column; align-items: stretch; position: absolute; -unity-text-align: upper-center; font-size: 20px; -unity-font-style: bold; top: 60%; right: 10%; left: 10%;"/>
+                <ui:DropdownField label="Escolha de OverBlade" name="NameOver" style="position: absolute; top: auto; bottom: 10%; right: 10%; left: 10%; flex-direction: column; -unity-text-align: upper-center; font-size: 30px; -unity-font-style: bold;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="BackMainBlade" style="flex-grow: 1; position: absolute; top: 2200px; left: 0%; right: 0%; height: 1000px;">
+                <ui:Image name="ImageMainBlade" style="position: absolute; top: 5%; left: 5%; right: 5%; height: 500px;"/>
+                <ui:DropdownField label="Tipo da Main Blade" name="TypeMainBlade" style="flex-direction: column; position: absolute; font-size: 20px; -unity-font-style: bold; -unity-text-align: upper-center; top: 60%; left: 10%; right: 60%;"/>
+                <ui:Toggle label="É Expend/Infinity" name="ExpendMain" style="font-size: 20px; -unity-text-align: upper-center; -unity-font-style: bold; flex-direction: column; align-items: center; top: 61%; left: 60%; right: 10%; position: absolute;"/>
+                <ui:Button text="Pesquisar" name="SearchMain" style="position: absolute; bottom: 20%; right: 10%; font-size: 20px; -unity-font-style: bold;"/>
+                <ui:DropdownField label="Escolha de Main Blade" name="SearchNameMain" style="position: absolute; left: 10%; bottom: 10%; right: 10%; font-size: 30px; -unity-text-align: upper-center; -unity-font-style: bold; flex-direction: column;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="BackAssisBlade" style="flex-grow: 1; top: 3200px; height: 1000px; left: 0%; right: 0%;">
+                <ui:Image name="ImageAssist" style="position: absolute; top: 5%; left: 5%; right: 5%; height: 500px;"/>
+                <ui:DropdownField label="Tipo da Assist Blade" name="TypeAssist" choices="Attack,Stamina,Defense,Balance" style="top: 60%; left: 10%; right: 10%; position: absolute; flex-direction: column; font-size: 20px; -unity-text-align: upper-center; -unity-font-style: bold;"/>
+                <ui:DropdownField label="Escolha Assist Blade" name="SearchNameAssist" style="flex-direction: column; position: absolute; bottom: 10%; right: 10%; left: 10%; font-size: 30px; -unity-text-align: upper-center; -unity-font-style: bold;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="BackReched" style="flex-grow: 1; position: absolute; top: 4200px; left: 0%; right: 0%; height: 800px;">
+                <ui:Image name="ImageReched" style="top: 5%; left: 5%; right: 5%; position: absolute; height: 500px;"/>
+                <ui:DropdownField label="Número" name="NumberReched" choices="0,1,2,3,4,5,6,7,8,9" style="top: 70%; left: 5%; right: 55%; font-size: 20px; -unity-text-align: upper-center; -unity-font-style: bold; position: absolute; flex-direction: column;"/>
+                <ui:DropdownField label="Altura" name="Heightreched" choices="45,50,55,60,65,70,75,80,85" style="-unity-text-align: upper-center; font-size: 20px; -unity-font-style: bold; top: 70%; right: 5%; left: 55%; position: absolute; flex-direction: column;"/>
+                <ui:Button text="Pesquisar" name="Searchreched" style="font-size: 25px; -unity-font-style: bold; bottom: 0%; left: 40%; right: 40%; position: absolute;"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="BackBit" style="flex-grow: 1; position: absolute; left: 0%; right: 0%; top: 5200px; height: 1000px;">
+                <ui:Image name="ImageBit" style="top: 5%; left: 5%; right: 5%; position: absolute; height: 500px;"/>
+                <ui:DropdownField label="Tipo da Bit" name="TypeBit" choices="Attack,Stamina,Defense,Balance" style="flex-direction: column; align-items: stretch; -unity-text-align: upper-center; font-size: 20px; -unity-font-style: bold; top: 60%; left: 5%; right: 65%; position: absolute;"/>
+                <ui:Toggle label="Não precisa de Reched" name="NotReched" style="font-size: 20px; -unity-text-align: upper-center; -unity-font-style: bold; position: absolute; top: 61%; left: 37%; right: 33%; flex-direction: column; align-items: center;"/>
+                <ui:DropdownField label="Mecanica da Bit" name="MachBit" choices="Normal,Free,Gear,Under,High,Low,Trans" style="font-size: 20px; -unity-text-align: upper-center; -unity-font-style: bold; top: 60%; left: 70%; right: 5%; position: absolute; flex-direction: column;"/>
+                <ui:Button text="Pesquisar" name="SearchBit" style="font-size: 20px; -unity-font-style: bold; bottom: 20%; right: 5%; position: absolute;"/>
+                <ui:DropdownField label="Escolha da Bit" name="SearchNameBit" style="-unity-text-align: upper-center; font-size: 30px; -unity-font-style: bold; bottom: 0%; right: 5%; left: 5%; position: absolute; flex-direction: column;"/>
+            </ui:VisualElement>
         </ui:ScrollView>
     </ui:VisualElement>
 </ui:UXML>

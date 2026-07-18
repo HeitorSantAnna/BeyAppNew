@@ -7,20 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    /*[SerializeField] List<Beys> Mainblade = new List<Beys>();
-
-    [SerializeField] List<Beys> Overblade = new List<Beys>();
-
-    [SerializeField] List<Beys> Assistblade = new List<Beys>();
-
-    public List<Beys> UBlade = new List<Beys>();
-
-    [SerializeField] List<Beys> BBlade = new List<Beys>();*/
-
-    #region Lista das partes dos beys
+    /*#region Lista das partes dos beys
 
     //Aqui fica a Blade dos BX
-    public List<Beys> BladeBxs = new List<Beys>();
+    List<Beys> BladeBxs = new List<Beys>();
 
     //Aqui fica a Clade dos UX
     List<Beys> BladeUxs = new List<Beys>();
@@ -72,9 +62,21 @@ public class GameController : MonoBehaviour
 
         //Aqui ficam as bits
         Addressables.LoadAssetsAsync<Beys>("Bit", bit => Bits.Add(bit)).Completed += OnLoaded;
-        /*Addressables.LoadAssetsAsync<Beys>("Over", Oblade => Overblade.Add(Oblade)).Completed += OnLoaded;
-        Addressables.LoadAssetsAsync<Beys>("Assist", Ablade => Assistblade.Add(Ablade)).Completed += OnLoaded;
-        Addressables.LoadAssetsAsync<Beys>("Main", Mblade => Mainblade.Add(Mblade)).Completed += OnLoaded;*/
+
+        //Aqui ficam as LockChips
+        Addressables.LoadAssetsAsync<Beys>("Chip", locks => LockChips.Add(locks)).Completed += OnLoaded;
+
+        //Aqui ficam as over Blades
+        Addressables.LoadAssetsAsync<Beys>("Over", overs => OverBlades.Add(overs)).Completed += OnLoaded;
+
+        //Aqui ficam as Main Blades
+        Addressables.LoadAssetsAsync<Beys>("Main", mains => mainBlades.Add(mains)).Completed += OnLoaded;
+
+        //Aqui ficam as Assist Blades
+        Addressables.LoadAssetsAsync<Beys>("Assist", assist => AssistBlades.Add(assist)).Completed += OnLoaded;
+
+        //Aqui ficam as UX Blades
+        Addressables.LoadAssetsAsync<Beys>("UX", ux => BladeUxs.Add(ux)).Completed += OnLoaded;
     }
 
     void OnLoaded(AsyncOperationHandle<IList<Beys>> handle)
@@ -99,4 +101,29 @@ public class GameController : MonoBehaviour
     {
         return Bits;
     }
+
+    public List<Beys> LChip()
+    {
+        return LockChips;
+    }
+
+    public List<Beys> OBlade()
+    {
+        return OverBlades;
+    }
+
+    public List<Beys> MB()
+    {
+        return mainBlades;
+    }
+
+    public List<Beys> ABlade()
+    {
+        return AssistBlades;
+    }
+
+    public List<Beys> UXBlade()
+    {
+        return BladeUxs;
+    }*/
 }

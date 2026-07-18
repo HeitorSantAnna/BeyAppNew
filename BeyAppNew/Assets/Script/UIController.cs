@@ -11,13 +11,29 @@ public class UIController : MonoBehaviour
 
     bool bxOn = false, cxOn = false, UxOn = false;
 
+    #region UIToolkit BX references
+
     private DropdownField dropBX, dropType, dropNumber, dropHeight, dropTypeBit, dropMach, dropBit, nameBits, droptypeBit;
 
     private Button search, searchR, searchB;
 
     private Image imageBey, imageReched, imageBit;
 
+    #endregion
+
+    #region UIToolkit CX refernces
+
+    private Button searchL, searchO, searchM, searchA, searchCR, searchCB;
+
+    private Image imageChip, imageOver, imageMain, imageAssist;
+
+    private DropdownField dropTypeLC, dropTypeO, dropTypeM, dropTypeA, dropTypeB, dropMB, dropchip, dropO, dropM, dropA, dropB;
+
+    #endregion
+
     private GameController gameController;
+
+    /*#region List Beys Parts
 
     private List<Beys> Blade = new List<Beys>();
 
@@ -25,13 +41,33 @@ public class UIController : MonoBehaviour
 
     private List<Beys> Bits = new List<Beys>();
 
+    private List<Beys> LChips = new List<Beys>();
+
+    private List<Beys> OBlades = new List<Beys>();
+
+    private List<Beys> MBlades = new List<Beys>();
+
+    private List<Beys> ABlades = new List<Beys>();
+
+    private List<Beys> UxBlades = new List<Beys>();
+
+    #endregion*/
+
+    #region Variables
+
     private Toggle LSpin;
 
     private Toggle Expend;
 
     private Toggle NoReched;
 
-    private bool leftspin, expend, dontreched;
+    private Toggle Metal;
+
+    private bool leftspin, expend, dontreched, metal;
+
+    #endregion
+
+    private Button bxButton, cxButton, uxButton;
 
     private Label alert;
 
@@ -41,11 +77,25 @@ public class UIController : MonoBehaviour
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
 
+        /*#region Preencher Listas
+
         Blade = gameController.BladesBX();
 
         Reched = gameController.Reched();
 
         Bits = gameController.Bit();
+
+        LChips = gameController.LChip();
+
+        OBlades = gameController.OBlade();
+
+        MBlades = gameController.MB();
+
+        ABlades = gameController.ABlade();
+
+        UxBlades = gameController.UXBlade();
+
+        #endregion*/
     }
 
     void Start()
@@ -54,13 +104,19 @@ public class UIController : MonoBehaviour
 
         mainConteinerElement = root.Q<VisualElement>("ZoneCreatorBey");
 
-        Button bxButton = root.Q<Button>("BXBeysButton");
+        bxButton = root.Q<Button>("BXBeysButton");
+
+        cxButton = root.Q<Button>("CXBeysButton");
+
+        uxButton = root.Q<Button>("UXBeysButton");
 
         Button exit = root.Q<Button>("ExitButton");
 
         Button confirm = root.Q<Button>("ConfirmButton");
 
         bxButton.clicked += () => BXVisual(root);
+
+        cxButton.clicked += () => CXVisual(root);
 
         exit.clicked += () => PrincipalScene();
 
@@ -69,9 +125,20 @@ public class UIController : MonoBehaviour
 
     void BXVisual(VisualElement root)
     {
-        bxOn = true;
+        bxButton.SetEnabled(false);
+
+        cxButton.SetEnabled(false);
+
+        uxButton.SetEnabled(false);
 
         bxDocument.CloneTree(mainConteinerElement);
+
+        /*for (int i = 0; i < Blade.Count; i++)
+        {
+            dropBX.choices.Add($"{Blade[i].ToString()}");
+        }*/
+
+        #region Get GameObjects UIToolkit
 
         dropBX = root.Q<DropdownField>("NameBey");
 
@@ -107,13 +174,21 @@ public class UIController : MonoBehaviour
 
         alert = root.Q<Label>("Alert");
 
-        droptypeBit = root.Q<DropdownField>("TypeBit"); 
+        droptypeBit = root.Q<DropdownField>("TypeBit");
 
-        search.clicked += () => SearchBladeBX();
+        #endregion
+
+        #region Search Area
+
+        /*search.clicked += () => SearchBladeBX();
 
         searchR.clicked += () => SearchReched();
 
-        searchB.clicked += () => SearchBit();
+        searchB.clicked += () => SearchBit();*/
+
+        #endregion
+
+        #region Detect change value
 
         dropTypeBit.RegisterValueChangedCallback(ChangeTypeBit);
 
@@ -133,10 +208,92 @@ public class UIController : MonoBehaviour
 
         nameBits.RegisterValueChangedCallback(ChangeImageBit);
 
-        for (int i = 0; i < gameController.BladeBxs.Count; i++)
-        {
-            dropBX.choices.Add($"{gameController.BladeBxs[i].ToString()}");
-        }
+        #endregion
+    }
+
+    void CXVisual(VisualElement root)
+    {
+        bxButton.SetEnabled(false);
+
+        cxButton.SetEnabled(false);
+
+        uxButton.SetEnabled(false);
+
+        cxDocument.CloneTree(mainConteinerElement);
+
+        #region Get Elements UIToolkit
+
+        dropTypeLC = root.Q<DropdownField>("TypeLC");
+
+        dropchip = root.Q<DropdownField>("NameChip");
+
+        dropTypeO = root.Q<DropdownField>("TipeOver");
+
+        dropO = root.Q<DropdownField>("NameOver");
+
+        dropTypeM = root.Q<DropdownField>("TypeMainBlade");
+
+        dropM = root.Q<DropdownField>("SearchNameMain");
+
+        dropTypeA = root.Q<DropdownField>("TypeAssist");
+
+        dropA = root.Q<DropdownField>("SearchNameAssist");
+
+        dropNumber = root.Q<DropdownField>("NumberReched");
+
+        dropHeight = root.Q<DropdownField>("Heightreched");
+
+        dropTypeB = root.Q<DropdownField>("TypeBit");
+
+        dropMB = root.Q<DropdownField>("MachBit");
+
+        dropB = root.Q<DropdownField>("SearchNameBit");
+
+        LSpin = root.Q<Toggle>("LeftSpinChip");
+
+        Expend = root.Q<Toggle>("ExpendMain");
+
+        Metal = root.Q<Toggle>("IsMetal");
+
+        imageChip = root.Q<Image>("ImageLockChip");
+
+        imageOver = root.Q<Image>("ImageOver");
+
+        imageMain = root.Q<Image>("ImageMainBlade");
+
+        imageAssist = root.Q<Image>("ImageAssist");
+
+        imageReched = root.Q<Image>("ImageReched");
+
+        imageBit = root.Q<Image>("ImageBit");
+
+        #endregion
+
+        /*#region Search Area Button
+
+        searchL.clicked += () => SearchChip();
+
+        searchO.clicked += () => SearchO();
+
+        searchM.clicked += () => SearchM();
+
+        searchA.clicked += () => SearchA();
+
+        searchCR.clicked += () => SearchRechedCX();
+
+        searchCB.clicked += () => SearchBitCX();
+
+        #endregion*/
+
+        #region Detect Change Values
+
+        LSpin.RegisterValueChangedCallback(ChangeSpinBX);
+
+        Expend.RegisterValueChangedCallback(ChangeExpendBX);
+
+        Metal.RegisterValueChangedCallback(ChangeMetal);
+
+        #endregion
     }
 
     void PrincipalScene()
@@ -149,9 +306,16 @@ public class UIController : MonoBehaviour
         Debug.Log($"Bey criado");
     }
 
+    #region Changes Functions
+
     void ChangeSpinBX(ChangeEvent<bool> evt)
     {
         leftspin = evt.newValue;
+    }
+
+    void ChangeMetal(ChangeEvent<bool> evt)
+    {
+        metal = evt.newValue;
     }
 
     void ChangeExpendBX(ChangeEvent<bool> evt)
@@ -165,7 +329,7 @@ public class UIController : MonoBehaviour
 
         if(index >= 0)
         {
-            imageBey.sprite = gameController.BladeBxs[index].sprite;
+            //imageBey.sprite = Blade[index].sprite;
         }
     }
 
@@ -200,9 +364,13 @@ public class UIController : MonoBehaviour
 
         if(index >= 0)
         {
-            imageBit.sprite = Bits[index].sprite;
+            //imageBit.sprite = Bits[index].sprite;
         }
     }
+
+    #endregion
+
+    /*#region Search Zone BX
 
     void SearchBladeBX()
     {
@@ -253,7 +421,7 @@ public class UIController : MonoBehaviour
 
         string typeBit = droptypeBit.value;
 
-        string machBit = dropMach.value;
+        string machBit = dropMB.value;
 
         for(int i = 0; i < Bits.Count; i++)
         {
@@ -266,7 +434,124 @@ public class UIController : MonoBehaviour
                 nameBits.choices.Add($"{Bits[i].namePart.ToString()}");
             }
         }
-
-        Debug.Log($"{^nameBits.choices.Count}");
     }
+
+    #endregion
+
+    #region Search Zone CX
+
+    void SearchChip()
+    {
+        dropchip.choices.Clear();
+
+        string typeChouse = dropTypeLC.value;
+
+        for(int i = 0; i < LChips.Count; i++)
+        {
+            string typechip = LChips[i].typeBey.ToString();
+
+            bool Sleft = LChips[i].Turnleft;
+
+            if(typechip == typeChouse && leftspin == Sleft)
+            {
+                dropchip.choices.Add($"{LChips[i].namePart.ToString()}");
+            }
+        }
+    }
+
+    void SearchO()
+    {
+        dropO.choices.Clear();
+
+        string typeChouse = dropTypeO.value;
+
+        for(int i = 0; i < OBlades.Count; i++)
+        {
+            string typeOver = OBlades[i].typeBey.ToString();
+
+            if(typeOver == typeChouse)
+            {
+                dropO.choices.Add($"{OBlades[i].namePart.ToString()}");
+            }
+        }
+    }
+
+    void SearchM()
+    {
+        dropM.choices.Clear();
+
+        string typeChouse = dropTypeM.value;
+
+        for(int i = 0; i< MBlades.Count; i++)
+        {
+            string typeMain = MBlades[i].typeBey.ToString();
+
+            if(typeMain == typeChouse)
+            {
+                dropM.choices.Add($"{MBlades[i].namePart.ToString()}");
+            }
+        }
+    }
+
+    void SearchA()
+    {
+        dropA.choices.Clear();
+
+        string typeChouse = dropTypeA.value;
+
+        for(int i = 0; i < ABlades.Count; i++)
+        {
+            string typeAssist = ABlades[i].namePart.ToString();
+
+            if(typeAssist == typeChouse)
+            {
+                dropA.choices.Add($"{ABlades[i].namePart.ToString()}");
+            }
+        }
+    }
+
+    void SearchRechedCX()
+    {
+        if (dropNumber != null && dropHeight != null)
+        {
+            string TrueName = $"{rechednumber}-{rechedheight}";
+
+            for (int i = 0; i < Reched.Count; i++)
+            {
+                string namep = Reched[i].namePart.ToString();
+
+                if (namep == TrueName)
+                {
+                    imageReched.sprite = Reched[i].sprite;
+                }
+            }
+        }
+        else
+        {
+            alert.text = "Marque ambas as opções para aparecer a peça";
+        }
+    }
+
+    void SearchBitCX()
+    {
+        dropB.choices.Clear();
+
+        string typeBit = dropTypeB.value;
+
+        string machBit = dropMB.value;
+
+        for (int i = 0; i < Bits.Count; i++)
+        {
+            string tBit = Bits[i].typeBey.ToString();
+
+            string tPart = Bits[i].typePart.ToString();
+
+            if (tBit == typeBit && tPart == machBit)
+            {
+                dropB.choices.Add($"{Bits[i].namePart.ToString()}");
+            }
+        }
+    }
+
+    #endregion*/
 }
