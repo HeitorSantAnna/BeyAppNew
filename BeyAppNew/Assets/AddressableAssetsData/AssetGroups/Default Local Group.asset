@@ -14,7 +14,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: d4949e89dc369114e8436452b306066f
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 41e9bd94fd301894d836cb7b46ef3c5e
+    m_Address: Assets/Parts/Blades/CXs/Assist
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Assist
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a34316361d12384693c2a0f63fc3ddf
+    m_Address: Assets/Parts/Blades/CXs/LockChip
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Chip
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78f9c3d3b04a9994798bee949381e216
+    m_Address: Assets/Parts/Bits
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Bit
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7db690b2ca22b4f4ea4306b0946aa6b8
+    m_Address: Assets/Parts/Blades/CXs/Main
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 882ce03c01463f54d80c1d5b2b102ead
+    m_Address: Assets/Parts/Recheds
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Reched
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7be016590020ed44867e786da8b7925
+    m_Address: Assets/Parts/Blades/CXs/Over
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Over
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db3c449362df5b2499f7e65520795c50
+    m_Address: Assets/Parts/Blades/BXS
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db7fddf03a28d6a4d882071b247e9405
+    m_Address: Assets/Parts/Blades/UXS
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - UX
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 12425636a0ca2ce4e8fa2bae33642c61, type: 2}
   m_SchemaSet:

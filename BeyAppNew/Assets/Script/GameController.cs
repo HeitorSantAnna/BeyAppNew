@@ -7,31 +7,25 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    /*#region Lista das partes dos beys
+    #region Lista das partes dos beys
 
-    //Aqui fica a Blade dos BX
-    List<Beys> BladeBxs = new List<Beys>();
-
-    //Aqui fica a Clade dos UX
-    List<Beys> BladeUxs = new List<Beys>();
+    //Aqui fica a Blade dos BX, UX e CX
+    List<Blade> Blades = new List<Blade>();
 
     //Aqui fica os Lock Chips
-    List<Beys> LockChips = new List<Beys>();
+    List<Chip> LockChips = new List<Chip>();
 
     //Aqui fica as Over Blades
-    List<Beys> OverBlades = new List<Beys>();
-
-    //Aqui fica as Main Blades
-    List<Beys> mainBlades = new List<Beys>();
+    List<OverBlade> OverBlades = new List<OverBlade>();
 
     //Aqui fica as Assist Blades
-    List<Beys> AssistBlades = new List<Beys>();
+    List<AssistBlade> AssistBlades = new List<AssistBlade>();
 
     //Aqui ficam as Recheds
-    List<Beys> Recheds = new List<Beys>();
+    List<Recheds> Recheds = new List<Recheds>();
 
     //Aqui ficam as Bits
-    List<Beys> Bits = new List<Beys>();
+    List<Bits> Bits = new List<Bits>();
 
     #endregion
 
@@ -55,31 +49,39 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         //Aqui vai chamar as Blades BX
-        Addressables.LoadAssetsAsync<Beys>("BX", bladeb => BladeBxs.Add(bladeb)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<Blade>("BX", bladeb => Blades.Add(bladeb)).Completed += OnLoadedBlade;
 
         //Aqui ficam as Recheds
-        Addressables.LoadAssetsAsync<Beys>("Reched", reched => Recheds.Add(reched)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<Recheds>("Reched", reched => Recheds.Add(reched)).Completed += OnLoadedReched;
 
         //Aqui ficam as bits
-        Addressables.LoadAssetsAsync<Beys>("Bit", bit => Bits.Add(bit)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<Bits>("Bit", bit => Bits.Add(bit)).Completed += OnLoadedBit;
 
         //Aqui ficam as LockChips
-        Addressables.LoadAssetsAsync<Beys>("Chip", locks => LockChips.Add(locks)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<Chip>("Chip", locks => LockChips.Add(locks)).Completed += OnLoadedChip;
 
         //Aqui ficam as over Blades
-        Addressables.LoadAssetsAsync<Beys>("Over", overs => OverBlades.Add(overs)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<OverBlade>("Over", overs => OverBlades.Add(overs)).Completed += OnLoadedOver;
 
         //Aqui ficam as Main Blades
-        Addressables.LoadAssetsAsync<Beys>("Main", mains => mainBlades.Add(mains)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<Blade>("Main", mains => Blades.Add(mains)).Completed += OnLoadedBlade;
 
         //Aqui ficam as Assist Blades
-        Addressables.LoadAssetsAsync<Beys>("Assist", assist => AssistBlades.Add(assist)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<AssistBlade>("Assist", assist => AssistBlades.Add(assist)).Completed += OnLoadedAssist;
 
         //Aqui ficam as UX Blades
-        Addressables.LoadAssetsAsync<Beys>("UX", ux => BladeUxs.Add(ux)).Completed += OnLoaded;
+        Addressables.LoadAssetsAsync<Blade>("UX", ux => Blades.Add(ux)).Completed += OnLoadedBlade;
     }
 
-    void OnLoaded(AsyncOperationHandle<IList<Beys>> handle)
+    void OnLoadedAssist(AsyncOperationHandle<IList<AssistBlade>> handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            Debug.Log($"Tudo foi carregado");
+        }
+    }
+
+    void OnLoadedBlade(AsyncOperationHandle<IList<Blade>> handle)
     {
         if(handle.Status == AsyncOperationStatus.Succeeded)
         {
@@ -87,43 +89,65 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public List<Beys> BladesBX()
+    void OnLoadedOver(AsyncOperationHandle<IList<OverBlade>> handle)
     {
-        return BladeBxs;
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            Debug.Log($"Tudo foi carregado");
+        }
     }
 
-    public List<Beys> Reched()
+    void OnLoadedReched(AsyncOperationHandle<IList<Recheds>> handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            Debug.Log($"Tudo foi carregado");
+        }
+    }
+
+    void OnLoadedBit(AsyncOperationHandle<IList<Bits>> handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            Debug.Log($"Tudo foi carregado");
+        }
+    }
+
+    void OnLoadedChip(AsyncOperationHandle<IList<Chip>> handle)
+    {
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            Debug.Log($"Tudo foi carregado");
+        }
+    }
+
+    public List<Blade> Blade()
+    {
+        return Blades;
+    }
+
+    public List<Recheds> Reched()
     {
         return Recheds;
     }
 
-    public List<Beys> Bit()
+    public List<Bits> Bit()
     {
         return Bits;
     }
 
-    public List<Beys> LChip()
+    public List<Chip> LChip()
     {
         return LockChips;
     }
 
-    public List<Beys> OBlade()
+    public List<OverBlade> OBlade()
     {
         return OverBlades;
     }
 
-    public List<Beys> MB()
-    {
-        return mainBlades;
-    }
-
-    public List<Beys> ABlade()
+    public List<AssistBlade> ABlade()
     {
         return AssistBlades;
     }
-
-    public List<Beys> UXBlade()
-    {
-        return BladeUxs;
-    }*/
 }

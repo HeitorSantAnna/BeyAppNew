@@ -34,4 +34,5 @@ public enum Mach
     Disc,
     Wall,
     Low,
+    Trans
 }
