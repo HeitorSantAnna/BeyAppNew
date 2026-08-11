@@ -9,8 +9,6 @@ public class UIController : MonoBehaviour
     [SerializeField] VisualTreeAsset bxDocument, uxDocument, cxDocument;
     [SerializeField] VisualElement mainConteinerElement, bxElement, root;
 
-    bool bxOn = false, cxOn = false, UxOn = false;
-
     #region UIToolkit BX references
 
     private DropdownField dropBX, dropType, dropNumber, dropHeight, dropTypeBit, dropMach, dropBit, nameBits, droptypeBit;
@@ -33,25 +31,21 @@ public class UIController : MonoBehaviour
 
     private GameController gameController;
 
-    /*#region List Beys Parts
+    #region List Beys Parts
 
-    private List<Beys> Blade = new List<Beys>();
+    private List<Blade> Blades= new List<Blade>();
 
-    private List<Beys> Reched = new List<Beys>();
+    private List<Recheds> Reched = new List<Recheds>();
 
-    private List<Beys> Bits = new List<Beys>();
+    private List<Bits> Bit = new List<Bits>();
 
-    private List<Beys> LChips = new List<Beys>();
+    private List<Chip> LChips = new List<Chip>();
 
-    private List<Beys> OBlades = new List<Beys>();
+    private List<OverBlade> OBlades = new List<OverBlade>();
 
-    private List<Beys> MBlades = new List<Beys>();
+    private List<AssistBlade> ABlades = new List<AssistBlade>();
 
-    private List<Beys> ABlades = new List<Beys>();
-
-    private List<Beys> UxBlades = new List<Beys>();
-
-    #endregion*/
+    #endregion
 
     #region Variables
 
@@ -67,7 +61,7 @@ public class UIController : MonoBehaviour
 
     #endregion
 
-    private Button bxButton, cxButton, uxButton;
+    private Button bxButton, cxButton, uxButton, exit, confirm;
 
     private Label alert;
 
@@ -77,25 +71,21 @@ public class UIController : MonoBehaviour
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
 
-        /*#region Preencher Listas
+        #region Preencher Listas
 
-        Blade = gameController.BladesBX();
+        Blades = gameController.Blade();
 
         Reched = gameController.Reched();
 
-        Bits = gameController.Bit();
+        Bit = gameController.Bit();
 
         LChips = gameController.LChip();
 
         OBlades = gameController.OBlade();
 
-        MBlades = gameController.MB();
-
         ABlades = gameController.ABlade();
 
-        UxBlades = gameController.UXBlade();
-
-        #endregion*/
+        #endregion
     }
 
     void Start()
@@ -104,15 +94,21 @@ public class UIController : MonoBehaviour
 
         mainConteinerElement = root.Q<VisualElement>("ZoneCreatorBey");
 
+        #region Butões principais
+
         bxButton = root.Q<Button>("BXBeysButton");
 
         cxButton = root.Q<Button>("CXBeysButton");
 
         uxButton = root.Q<Button>("UXBeysButton");
 
-        Button exit = root.Q<Button>("ExitButton");
+        exit = root.Q<Button>("ExitButton");
 
-        Button confirm = root.Q<Button>("ConfirmButton");
+        confirm = root.Q<Button>("ConfirmButton");
+
+        #endregion
+
+        #region Actions Buttons
 
         bxButton.clicked += () => BXVisual(root);
 
@@ -121,6 +117,8 @@ public class UIController : MonoBehaviour
         exit.clicked += () => PrincipalScene();
 
         confirm.clicked += () => ConfirmBey();
+
+        #endregion
     }
 
     void BXVisual(VisualElement root)
@@ -133,10 +131,10 @@ public class UIController : MonoBehaviour
 
         bxDocument.CloneTree(mainConteinerElement);
 
-        /*for (int i = 0; i < Blade.Count; i++)
+        for (int i = 0; i < Blades.Count; i++)
         {
-            dropBX.choices.Add($"{Blade[i].ToString()}");
-        }*/
+            dropBX.choices.Add($"{Blades[i].nameBlade.ToString()}");
+        }
 
         #region Get GameObjects UIToolkit
 

@@ -1,0 +1,14 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; position: absolute; top: 0%; bottom: 0%; right: 0%; left: 0%; background-color: rgb(0, 100, 0);">
+        <ui:VisualElement name="BackgroundBlade" style="flex-grow: 1; position: absolute; top: 0%; right: 0%; left: 0%; height: 1000px;">
+            <ui:Foldout text="Selecionar Blade" name="SelectBladeArea" value="true" style="position: absolute; top: 0%; left: 0%; right: 0%; -unity-text-align: upper-left; font-size: 20px; -unity-font-style: bold; color: rgb(200, 200, 200); flex-direction: column; flex-wrap: nowrap; align-items: center; justify-content: flex-start; bottom: 0; visibility: visible; display: flex; overflow: visible;">
+                <ui:Image source="project://database/Assets/SpriteParts/DranStrike.png?fileID=1991476394&amp;guid=f9ae15fb4f099d64b8bb0564f8f637ae&amp;type=3#DranStrike_0" scale-mode="ScaleToFit" name="ImageBlade" style="position: relative; top: 0; left: auto; bottom: auto; right: auto; height: auto; align-items: flex-end; -unity-text-align: upper-left;"/>
+                <ui:VisualElement name="AreaSelect" style="flex-grow: 1; position: absolute; left: -105%; right: -95%; height: 100px; top: 110%; align-self: stretch; align-items: center;">
+                    <ui:DropdownField label="Tipo de Blade" choices="Attack,Defese,Stamina,Balance" name="TypeBlade" style="align-items: stretch; position: absolute; flex-direction: column; top: 0%; left: 0%; justify-content: flex-start; align-self: flex-end; width: 200px; -unity-text-align: upper-center; color: rgb(221, 39, 194);"/>
+                    <ui:Toggle label="Gira Esqerda" name="TurnLeft" style="flex-direction: column; align-items: center; -unity-text-align: upper-center; position: absolute; top: 0%; left: auto; right: auto;"/>
+                    <ui:Toggle label="É Expend/Infinity" name="IsExpend" style="flex-direction: column; -unity-text-align: upper-center; align-items: center; position: absolute; top: 0%; right: 0;"/>
+                </ui:VisualElement>
+            </ui:Foldout>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
